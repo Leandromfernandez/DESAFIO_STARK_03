@@ -8,16 +8,22 @@ llamada “nombre”. Caso contrario la función retornara un False
 from data_stark import lista_personajes
 
 def obtener_dato(lista_personajes:list, clave:str):
-    for personaje in lista_personajes:
-        if clave in personaje:
-            dato = personaje[clave]
-            return dato
-           
-       
-    print('La clave no se encuentra en el diccionario.')
+    if len(lista_personajes)>=1:
+        for personaje in lista_personajes:
+            if clave in personaje:
+                dato = personaje[clave]
+                return dato
             
+        if clave not in personaje:
+            print("La clave no existe. ")
+    else:
+        print('La lista se encuentra vacia!. ')
+        return False
+    
+    
 
-dato = obtener_dato(lista_personajes, 'nombre')
+
+dato = obtener_dato(lista_personajes, 'altura')
 
 def stark_normalizar_datos(lista_personajes:list, key:str):
 
